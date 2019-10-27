@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DIV版本咖啡实例</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #ccc;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+
+    #header {
+        text-align: center;
+        background-color: #012965;
+        height: 70px;
+        color: #a6e2f2;
+
+    }
+
+    #header .title {
+        line-height: 70px;
+    }
+
+    #header .title img {
+        height: 20px;
+        width: 20px;
+    }
+
+    #sidebar {
+        float: left;
+        width: 20%;
+        height: 100%;
+        position: sticky;
+        top: 0;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    #sidebar ul>li {
+        padding: 10px;
+        border-bottom: 1px solid #333;
+        list-style: none;
+    }
+
+    #sidebar ul>li:hover {
+        background-color: #4a4a4a;
+    }
+
+    #sidebar ul>li:last-child {
+        border-bottom: 0;
+    }
+
+    #sidebar ul>li>a {
+        color: #333;
+    }
+
+
+    #main {
+        float: left;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+
+    #main .main-top h2 {
+        text-align: center;
+    }
+
+    #main .main-top img {
+        width: 78%;
+    }
+
+    #main .main-top table {
+        border-collapse: collapse;
+        width: 78%;
+        margin: 0 auto;
+    }
+
+    #main .main-top table tr td:last-child::before {
+        content: '￥'
+    }
+
+    #main .main-container {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    #main .main-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #main .main-container p {
+        text-indent: 2em;
+    }
+
+    #main .main-container p::first-letter {
+        font-size: 32px;
+    }
+
+    #footer {
+        text-align: center;
+        background-color: #012965;
+        height: 70px;
+        color: #a6e2f2;
+    }
+
+    #footer .title {
+        line-height: 70px;
+    }
+
+    #footer .title img {
+        height: 20px;
+        width: 20px;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <div class="title">
+            <img src="./img/coffee.png" alt="">
+            <span class="title">来杯咖啡吗</span>
+        </div>
+    </div>
+    <div id="sidebar">
+        <ul>
+            <li><a href="#a">拿铁</a></li>
+            <li><a href="#b">美式咖啡</a></li>
+            <li><a href="#c">卡布奇诺</a></li>
+            <li><a href="#d">黑糖玛奇朵</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div class="main-top">
+            <h2><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571978410698&di=72effc7648d32aef9f5429579bc1ebc3&imgtype=0&src=http%3A%2F%2Fp2.so.qhimgs1.com%2Ft01c7e9fcaf2a06110e.jpg"
+                    alt=""></h2>
+            <table border="1">
+                <tr>
+                    <th>咖啡</th>
+                    <th>价格</th>
+                </tr>
+                <tr>
+                    <td>拿铁</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>美式咖啡</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>卡布奇诺</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>黑糖玛奇朵</td>
+                    <td>24</td>
+                </tr>
+            </table>
+        </div>
+        <div id="a" class="main-container">
+            <h4>拿铁</h4>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571981991968&di=fdc1bbd644eceaf1b07251c0da648df8&imgtype=0&src=http%3A%2F%2Fp0.meituan.net%2Fdeal%2F9c19d429dfc65adf0bccc27e9b58810a123457.jpg"
+                alt="">
+            <p>咖啡树是属茜草科多年生常绿灌木或小乔木，日常饮用的咖啡是用咖啡豆配合各种不同的烹煮器具制作出来的，而咖啡豆就是指咖啡树果实里面的果仁，再用适当的方法烘焙而成，一杯标准的咖啡品尝起来的味道不应该是苦涩的，一名合格的咖啡师在制作咖啡时会严谨地进行每一步操作，最后为客人呈上的咖啡在味觉上会呈现出不同程度的甜度、酸度、醇厚度或是干净度。
+            </p>
+        </div>
+        <div id="b" class="main-container">
+            <h4>美式咖啡</h4>
+            <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=31d186380d33874488c8272e3066b29c/a9d3fd1f4134970af7bbc84794cad1c8a6865d8a.jpg"
+                alt="">
+            <p>咖啡树是属茜草科多年生常绿灌木或小乔木，日常饮用的咖啡是用咖啡豆配合各种不同的烹煮器具制作出来的，而咖啡豆就是指咖啡树果实里面的果仁，再用适当的方法烘焙而成，一杯标准的咖啡品尝起来的味道不应该是苦涩的，一名合格的咖啡师在制作咖啡时会严谨地进行每一步操作，最后为客人呈上的咖啡在味觉上会呈现出不同程度的甜度、酸度、醇厚度或是干净度。
+            </p>
+        </div>
+        <div id="c" class="main-container">
+            <h4>卡布奇诺</h4>
+            <img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=7c624c1cac345982d187edc06d9d5ac8/ac6eddc451da81cbd2645ba55366d016082431dc.jpg"
+                alt="">
+            <p>咖啡树是属茜草科多年生常绿灌木或小乔木，日常饮用的咖啡是用咖啡豆配合各种不同的烹煮器具制作出来的，而咖啡豆就是指咖啡树果实里面的果仁，再用适当的方法烘焙而成，一杯标准的咖啡品尝起来的味道不应该是苦涩的，一名合格的咖啡师在制作咖啡时会严谨地进行每一步操作，最后为客人呈上的咖啡在味觉上会呈现出不同程度的甜度、酸度、醇厚度或是干净度。
+            </p>
+        </div>
+        <div id="d" class="main-container">
+            <h4>黑糖玛奇朵</h4>
+            <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=7bd67a85a044ad343ab28fd5b1cb6791/1ad5ad6eddc451da6b3ed483b7fd5266d116328a.jpg"
+                alt="">
+            <p>咖啡树是属茜草科多年生常绿灌木或小乔木，日常饮用的咖啡是用咖啡豆配合各种不同的烹煮器具制作出来的，而咖啡豆就是指咖啡树果实里面的果仁，再用适当的方法烘焙而成，一杯标准的咖啡品尝起来的味道不应该是苦涩的，一名合格的咖啡师在制作咖啡时会严谨地进行每一步操作，最后为客人呈上的咖啡在味觉上会呈现出不同程度的甜度、酸度、醇厚度或是干净度。
+            </p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="title">
+            <img src="./img/coffee.png" alt="">
+            <span class="title">来杯咖啡吗</span>
+        </div>
+    </div>
+</body>
+
+</html>

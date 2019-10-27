@@ -95,7 +95,9 @@ hr {
     width: 300px;
     padding-top: 10px;
 }
-
+#container .container-eontent img:hover {
+    opacity: 0.5;
+}
 
 #footer {
     margin-top: 10px;

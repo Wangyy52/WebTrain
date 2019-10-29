@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        position: relative;
+    }
+
+    #main {
+        /* position: absolute; */
+        border: 1px solid #ccc;
+        height: 500px;
+    }
+
+    #footer {
+        text-align: center;
+    }
+
+    #footer .f-input {
+        height: 80px;
+        line-height: 80px;
+    }
+
+    #footer .f-input input {
+        height: 30px;
+        width: 300px;
+    }
+
+    #footer button {
+        border: 1px solid #00BFFF;
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+        background-color: rgba(0, 250, 154, 0.5);
+    }
+
+    @keyframes move {
+        0% {
+            right: 0;
+        }
+
+        25% {
+            right: 25%;
+        }
+
+        50% {
+            right: 50%;
+        }
+
+        75% {
+            right: 75%;
+        }
+
+        100% {
+            right: 120%;
+        }
+    }
+
+    p {
+        animation: move 10s linear forwards;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="main"></div>
+        <div id="footer">
+            <div class="f-input">
+                <input id="input" type="text">
+            </div>
+            <div class="f-buttom">
+                <button id="btn1" onclick="biu()">发射</button>
+                <button id="btn2" onclick="remove()">清屏</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let main = document.getElementById("main")
+        let input = document.getElementById("input")
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+
+
+        // 弹幕存储
+        let data = ['1', '2', '3']
+
+
+        // 发送
+        function biu() {
+            console.log("biu")
+            let output = input.value
+            if (output == '') {
+                alert('请输入弹窗内容！')
+            } else {
+                // 随机颜色
+                let r = Math.floor(Math.random() * 254)
+                let g = Math.floor(Math.random() * 254)
+                let b = Math.floor(Math.random() * 254)
+                let color = `rgb(${r},${g},${b})`;
+                console.log(color)
+                // 随机距离
+                let t = Math.floor(Math.random() * 400)
+                console.log(t)
+                // 随机字体
+                let f = Math.floor(Math.random() * 30)
+                console.log("字体大小" + f)
+                console.log(output)
+                // 插入
+                let p = document.createElement('p')
+                p.innerText = output
+                p.style.position = "absolute"
+                p.style.right = 0
+                p.style.top = t + "px"
+                p.style.fontSize = f + "px"
+                p.style.color = "rgb" + "(" + r + "," + g + "," + b + ")"
+                console.log(t + "px")
+                main.append(p)
+                input.value = ''
+            }
+
+        }
+        // 清屏
+        function remove() {
+            console.log("remove")
+        }
+    </script>
+</body>
+
+</html>

@@ -111,8 +111,17 @@
                 danmu()
             })
             // 键盘事件
-            $("#input").keypress(function () {
-                danmu()
+            $("#input").keypress(function (event) {
+                // 回车多条事件
+                $(document).keyup(function (event) {
+                    if (event.keyCode == 13) {
+                        danmu()
+                    }
+                });
+                // 只触发一次
+                // if (event.keyCode == 13) {
+                //         danmu()
+                //     }
             });
             // 清屏
             $("#clear").click(function () {

@@ -1,0 +1,39 @@
+/* css初始化 */
+
+* {
+    /* 清除所有HTML标记的默认边距 */
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    /* 清楚浮動 */
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+ul { 
+    /* 清楚li的小圆点 */
+    list-style: none;
+}
+a { /* 超链接的样式 */
+    color: #050505;
+    text-decoration: none;
+}
+input {
+        border: 0;  /* 所有的表单边框为0 */
+        box-sizing: border-box; /* CSS3盒子模型 border 和 padding 都包含到 width 里面去 */
+        background:none;  
+        outline:none;  
+        /* border:none; */
+    }
+.container { /*版心的宽度都是1200，所以集体声明*/
+    width: 1200px;
+    margin: 0 auto;
+}
+/* css初始化结束 */

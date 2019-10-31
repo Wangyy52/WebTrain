@@ -1,20 +1,20 @@
 <template>
   <div>
     <Header />
-    <Map />
+    <MainNews />
     <Footer />
   </div>
 </template>
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import Map from '@/components/about/Map.vue'
+import MainNews from '@/components/news/MainNews.vue'
 export default {
-  name:"About",
+  name:"News",
   components:{
     Header,
     Footer,
-    Map
+    MainNews
   }
 }
 </script>

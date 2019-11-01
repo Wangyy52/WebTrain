@@ -3,152 +3,69 @@
     <div class="main-news-top">
       <h3>最新动态</h3>
     </div>
-    <div class="main-news-item">
+    <div class="main-news-item" v-for="(item, index) in news" v-if="index<8" :key="index.id">
       <div class="main-news-item-left">
         <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
+          <img :src="item.imgUrl" alt />
         </a>
       </div>
-      <div class="main-news-item-right">
+      <div class="main-news-item-right" >
         <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
+          <h4>{{item.name}}</h4>
         </a>
-        <p>发布日期：2019年10月31日</p>
+        <p>发布日期：{{item.time}}</p>
         <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
+          <p>{{item.desc}}</p>
         </a>
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="main-news-item">
-      <div class="main-news-item-left">
-        <a href="#">
-          <img src="../../assets/img/index_luobo_1.jpg" alt />
-        </a>
-      </div>
-      <div class="main-news-item-right">
-        <a href="#">
-          <h4>旺仔再一次创新 进行第二阶段发行</h4>
-        </a>
-        <p>发布日期：2019年10月31日</p>
-        <a href="#">
-          <p>旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。旺仔再一次创新，进行第二阶段发行。</p>
-        </a>
-      </div>
-      <div class="clearfix"></div>
-    </div>
- 
+
     <div class="clearfix"></div>
     <div class="main-news-page">
-      <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+      <el-pagination :page-size="pageSize" @current-change="handleCurrentChange" :current-page="currentPage"  background layout="prev, pager, next" :total="total"></el-pagination>
     </div>
   </div>
 </template>
 <script>
+import NewsApi from '../../api/news'
 export default {
-  name: "Main-News"
+  name: "Main-News",
+  data() {
+    return {
+      news: [],//新闻数据
+      total:10,//总数量
+      currentPage:1,//当前页
+      pageSize:8,//页面长度
+    };
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    // 获取新闻数据
+    fetchData(){
+      NewsApi.search(this.currentPage,this.pageSize).then(response=>{
+        const resp = response.data
+        // console.log(resp.data)
+        if(resp.flag){
+          this.news = resp.data
+          this.total = resp.data.length
+        }else {
+          this.$message({
+            type: "warning",
+            message: "数据获取失败"
+          });
+        }
+      })
+    },
+    // 当前页
+    handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+        this.currentPage = val;
+        this.fetchData()
+      }
+  }
 };
 </script>
 <style scoped>

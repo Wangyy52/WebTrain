@@ -11,6 +11,11 @@ Vue.use(BaiduMap, {
 })
 Vue.use(ElementUI)
 Vue.config.productionTip = false
+// Vue.config.productionTip = false;
+Vue.config.productionTip = process.env.NODE_ENV === 'production';
+console.log(process.env.NODE_ENV)//开发环境development，生产环境 production
+console.log(process.env.VUE_APP_SERVICE_URL)
+console.log(process.env.VUE_APP_BASE_API)
 
 new Vue({
   router,

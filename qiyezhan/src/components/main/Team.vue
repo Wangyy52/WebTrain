@@ -45,7 +45,12 @@
 </template>
 <script>
 export default {
-  name: "Team"
+  name: "Team",
+  data() {
+    return {
+      
+    }
+  },
 };
 </script>
 <style scoped>

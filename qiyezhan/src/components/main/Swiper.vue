@@ -3,13 +3,13 @@
     <transition-group tag="ul" class="slide-ul" name="list">
       <li
         v-for="(list,index) in slideList"
-        :key="list.desc"
+        :key="list.id"
         v-show="index===currentIndex"
         @mouseenter="stop"
         @mouseleave="go"
       >
-        <a :href="list.clickUrl">
-          <img :src="list.image" :alt="list.desc" />
+        <a href="#">
+          <img :src="list.imgUrl" :alt="list.id" />
         </a>
       </li>
     </transition-group>
@@ -24,32 +24,47 @@
   </div>
 </template>
 <script>
+import Swiper from "../../api/swiper";
 export default {
   name: "Swiper",
   data() {
     return {
       slideList: [
-        {
-          clickUrl: "#",
-          desc: "nhwc",
-          image: "http://dummyimage.com/1745x492/f1d65b"
-        },
-        {
-          clickUrl: "#",
-          desc: "hxrj",
-          image: "http://dummyimage.com/1745x492/40b7ea"
-        },
-        {
-          clickUrl: "#",
-          desc: "rsdh",
-          image: "http://dummyimage.com/1745x492/e3c933"
-        }
+        // {
+        //   clickUrl: "#",
+        //   desc: "nhwc",
+        //   image: "http://dummyimage.com/1745x492/f1d65b"
+        // },
+        // {
+        //   clickUrl: "#",
+        //   desc: "hxrj",
+        //   image: "http://dummyimage.com/1745x492/40b7ea"
+        // },
+        // {
+        //   clickUrl: "#",
+        //   desc: "rsdh",
+        //   image: "http://dummyimage.com/1745x492/e3c933"
+        // }
       ],
       currentIndex: 0,
       timer: ""
     };
   },
   methods: {
+    fetchData() {
+      Swiper.getSwiper().then(response => {
+        const resp = response.data;
+        console.log(resp);
+        if (resp.flag) {
+          this.slideList = resp.data;
+        } else {
+          this.$message({
+            type: "warning",
+            message: resp.message
+          });
+        }
+      });
+    },
     go() {
       this.timer = setInterval(() => {
         this.autoPlay();
@@ -70,6 +85,7 @@ export default {
     }
   },
   created() {
+    this.fetchData();
     this.$nextTick(() => {
       this.timer = setInterval(() => {
         this.autoPlay();
@@ -80,11 +96,11 @@ export default {
 </script>
 <style scoped>
 .swiper-wrap {
-  height: 350px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
   background-color: #fff;
-  margin-top:2px;
+  margin-top: 2px;
 }
 
 .slide-ul {
@@ -107,7 +123,7 @@ img {
 .swiper-items {
   position: absolute;
   z-index: 10;
-  top: 380px;
+  top: 600px;
   width: 100%;
   margin: 0 auto;
   text-align: center;

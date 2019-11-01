@@ -1,44 +1,45 @@
 <template>
   <div class="news container">
     <h3>新闻动态</h3>
-    <div class="news-item">
+    <div class="news-item" v-for="(item, index) in news" v-if="index<4" :key="index.id">
       <a href="#">
-        <img src="../../assets/img/index_luobo_1.jpg" alt />
-        <h5>蜘蛛侠VS毒液联盟，奇迹般获得冠军</h5>
+        <img :src="item.imgUrl" alt />
+        <h5>{{item.name}}</h5>
         <hr />
-        <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好</p>
-      </a>
-    </div>
-    <div class="news-item">
-      <a href="#">
-        <img src="../../assets/img/index_luobo_1.jpg" alt />
-        <h5>蜘蛛侠VS毒液联盟，奇迹般获得冠军</h5>
-        <hr />
-        <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好</p>
-      </a>
-    </div>
-    <div class="news-item">
-      <a href="#">
-        <img src="../../assets/img/index_luobo_1.jpg" alt />
-        <h5>蜘蛛侠VS毒液联盟，奇迹般获得冠军</h5>
-        <hr />
-        <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好</p>
-      </a>
-    </div>
-    <div class="news-item">
-      <a href="#">
-        <img src="../../assets/img/index_luobo_1.jpg" alt />
-        <h5>蜘蛛侠VS毒液联盟，奇迹般获得冠军</h5>
-        <hr />
-        <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好</p>
+        <p>{{item.desc}}</p>
       </a>
     </div>
     <div class="clearfix"></div>
   </div>
 </template>
 <script>
+import NewsApi from '../../api/news'
 export default {
-  name: "Index-News"
+  name: "Index-News",
+  data() {
+    return {
+      news:[]
+    }
+  },
+  methods: {
+    fetchData(){
+      NewsApi.getNews().then(response=>{
+        const resp = response.data
+        console.log(resp.data)
+        if(resp.flag){
+          this.news = resp.data
+        }else {
+          this.$message({
+            type: "warning",
+            message: resp.message
+          });
+        }
+      })
+    }
+  },
+  created() {
+    this.fetchData()
+  },
 };
 </script>
 <style scoped>

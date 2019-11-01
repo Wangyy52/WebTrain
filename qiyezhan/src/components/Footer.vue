@@ -1,5 +1,6 @@
 <template>
-  <div class="footer container">
+<div class="footer">
+  <div class="foot container">
     <div class="footer-item">
       <img src="../assets/img/footer_icon_1.svg" alt />
       <p>福建省福州市闽侯县大学城</p>
@@ -19,6 +20,7 @@
     <div class="clearfix"></div>
     <hr>
     <span>版权所有@旺仔联盟</span>
+  </div>
   </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="header container">
+  <div class="header">
     <div class="index">
       <a href="#">
         <img src="../assets/img/logo.svg" alt />
@@ -13,7 +13,7 @@
           <a href="/#/">首页</a>
         </li>
         <li>
-          <a href="#">新闻</a>
+          <a href="/#/news">新闻</a>
         </li>
         <li>
           <a href="/#/about">关于我们</a>

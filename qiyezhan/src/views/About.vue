@@ -1,20 +1,14 @@
 <template>
   <div>
-    <Header />
     <Map />
-    <Footer />
   </div>
 </template>
 <script>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
-import Map from '@/components/about/Map.vue'
+import Map from "@/components/about/Map.vue";
 export default {
-  name:"About",
-  components:{
-    Header,
-    Footer,
+  name: "About",
+  components: {
     Map
   }
-}
+};
 </script>

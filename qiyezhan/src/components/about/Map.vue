@@ -3,7 +3,7 @@
     <h3>关于我们</h3>
     <baidu-map class="map-item" center="福建省福州市闽侯县"></baidu-map>
     <div class="map-desc">
-      <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好。</p>
+      <p>根据化石研究，地球上最早出现的动物源于海洋。早期的海洋动物经过漫长的地质时期，逐渐演化出各种分支，丰富了早期的地球生命形态。在人类出现以前，史前动物便已出现，并在各自的活动期得到繁荣发展。后来，它们在不断变换的生存环境下相继灭绝。</p>
       <div class="map-desc-item">
       <img src="../../assets/img/footer_icon_1.svg" alt />
       <span>福建省福州市闽侯县大学城</span>
@@ -56,7 +56,7 @@ export default {
   vertical-align: middle;
 }
 .map-desc p {
-  font-size: 20px;
+  font-size: 18px;
 }
 .map-desc-item {
   padding-top: 18px;

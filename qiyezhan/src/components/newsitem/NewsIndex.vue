@@ -2,21 +2,53 @@
   <div class="news-index container">
     <div class="news-index-top">
       <div class="news-index-top-p">
-        <h3>旺仔联盟再出新品</h3>
-        <p>时间：2019.11.01</p>
+        <h3>{{newsMap.name}}</h3>
+        <p>时间：{{newsMap.time}}</p>
       </div>
     </div>
     <div class="news-index-img">
-        <img src="../../assets/img/index_luobo_3.jpg" alt="">
+        <img :src="newsMap.imgUrl" alt="">
     </div>
     <div class="news-index-p">
-        <p>旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好。旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好。旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好。旺仔牛奶糖是旺仔旗下的一款奶糖。富含人体每日必须的多种氨基酸、钙、脂肪、维生素等营养成份；大红色的设计，高端的品质，定价合理，奶味纯正、浓郁、淳厚、口味香甜，口感好。</p>
+        <p>{{newsMap.desc}}</p>
     </div>
   </div>
 </template>
 <script>
+import GetIdApi from '../../api/news'
 export default {
-  name: "News-Index"
+  name: "News-Index",
+  data() {
+    return {
+      id:1,
+      newsMap:{
+        name:'',
+        time:'',
+        imgUrl:'',
+        desc:''
+      }
+    }
+  },
+  created() {
+    this.fetchData()
+  },
+  methods: {
+    fetchData(){
+      GetIdApi.getById(this.id).then(resposne=>{
+        const resp = resposne.data
+        console.log(resp.data)
+        if(resp.flag){
+          this.newsMap = resp.data
+          console.log(this.newsMap)
+        }else{
+          this.$message({
+            type: "warning",
+            message: resp.message
+          });
+        }
+      })
+    }
+  },
 };
 </script>
 <style scoped>
@@ -29,7 +61,7 @@ export default {
   background-color: #f3f3f3;
   height: 80px;
   line-height: 60px;
-  box-shadow: 0px 3px 0px #ccc;
+  /* box-shadow: 0px 1px 0px #ccc; */
 }
 .news-index .news-index-top .news-index-top-p {
   height: 50px;

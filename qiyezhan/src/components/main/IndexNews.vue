@@ -2,44 +2,44 @@
   <div class="news container">
     <h3>新闻动态</h3>
     <div class="news-item" v-for="(item, index) in news" v-if="index<4" :key="index.id">
-      <a href="#">
+      <router-link :to="{path:'/newsitem/',query:{id:item.id}}">
         <img :src="item.imgUrl" alt />
         <h5>{{item.name}}</h5>
         <hr />
         <p>{{item.desc}}</p>
-      </a>
+      </router-link>
     </div>
     <div class="clearfix"></div>
   </div>
 </template>
 <script>
-import NewsApi from '../../api/news'
+import NewsApi from "../../api/news";
 export default {
   name: "Index-News",
   data() {
     return {
-      news:[]
-    }
+      news: []
+    };
   },
   methods: {
-    fetchData(){
-      NewsApi.getNews().then(response=>{
-        const resp = response.data
-        console.log(resp.data)
-        if(resp.flag){
-          this.news = resp.data
-        }else {
+    fetchData() {
+      NewsApi.getNews().then(response => {
+        const resp = response.data;
+        console.log(resp.data);
+        if (resp.flag) {
+          this.news = resp.data;
+        } else {
           this.$message({
             type: "warning",
             message: resp.message
           });
         }
-      })
+      });
     }
   },
   created() {
-    this.fetchData()
-  },
+    this.fetchData();
+  }
 };
 </script>
 <style scoped>
@@ -56,7 +56,7 @@ export default {
   padding-top: 15px;
   /* background-color: red; */
 }
-.news .news-item:nth-child(5){
+.news .news-item:nth-child(5) {
   padding-right: 0;
 }
 .news .news-item a img {

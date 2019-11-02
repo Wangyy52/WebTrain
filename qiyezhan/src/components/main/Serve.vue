@@ -4,9 +4,9 @@
         <div class="serve-main">
             <ul>
                 <li><a href="#"><img src="../../assets/img/serve_icon_1.svg" alt=""><p>我是VIP</p></a></li>
-                <li><a href="#"><img src="../../assets/img/serve_icon_2.svg" alt=""><p>我是VIP</p></a></li>
-                <li><a href="#"><img src="../../assets/img/serve_icon_3.svg" alt=""><p>我是VIP</p></a></li>
-                <li><a href="#"><img src="../../assets/img/serve_icon_4.svg" alt=""><p>我是VIP</p></a></li>
+                <li><a href="#"><img src="../../assets/img/serve_icon_2.svg" alt=""><p>英雄合作</p></a></li>
+                <li><a href="#"><img src="../../assets/img/serve_icon_3.svg" alt=""><p>寻找宠物</p></a></li>
+                <li><a href="#"><img src="../../assets/img/serve_icon_4.svg" alt=""><p>寻找客服</p></a></li>
             </ul>
         </div>
     </div>

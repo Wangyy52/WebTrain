@@ -5,38 +5,44 @@
     </div>
     <div class="main-news-item" v-for="(item, index) in news" v-if="index<8" :key="index.id">
       <div class="main-news-item-left">
-        <a href="#">
+        <router-link :to="{path:'/newsitem/',query:{id:item.id}}">
           <img :src="item.imgUrl" alt />
-        </a>
+        </router-link>
       </div>
-      <div class="main-news-item-right" >
-        <a href="#">
+      <div class="main-news-item-right">
+        <router-link :to="{path:'/newsitem/',query:{id:item.id}}">
           <h4>{{item.name}}</h4>
-        </a>
+        </router-link>
         <p>发布日期：{{item.time}}</p>
-        <a href="#">
+        <router-link :to="{path:'/newsitem/',query:{id:item.id}}">
           <p>{{item.desc}}</p>
-        </a>
+        </router-link>
       </div>
       <div class="clearfix"></div>
     </div>
-
     <div class="clearfix"></div>
     <div class="main-news-page">
-      <el-pagination :page-size="pageSize" @current-change="handleCurrentChange" :current-page="currentPage"  background layout="prev, pager, next" :total="total"></el-pagination>
+      <el-pagination
+        :page-size="pageSize"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        background
+        layout="prev, pager, next"
+        :total="total"
+      ></el-pagination>
     </div>
   </div>
 </template>
 <script>
-import NewsApi from '../../api/news'
+import NewsApi from "../../api/news";
 export default {
   name: "Main-News",
   data() {
     return {
-      news: [],//新闻数据
-      total:10,//总数量
-      currentPage:1,//当前页
-      pageSize:8,//页面长度
+      news: [], //新闻数据
+      total: 10, //总数量
+      currentPage: 1, //当前页
+      pageSize: 8 //页面长度
     };
   },
   created() {
@@ -44,27 +50,27 @@ export default {
   },
   methods: {
     // 获取新闻数据
-    fetchData(){
-      NewsApi.search(this.currentPage,this.pageSize).then(response=>{
-        const resp = response.data
+    fetchData() {
+      NewsApi.search(this.currentPage, this.pageSize).then(response => {
+        const resp = response.data;
         // console.log(resp.data)
-        if(resp.flag){
-          this.news = resp.data
-          this.total = resp.data.length
-        }else {
+        if (resp.flag) {
+          this.news = resp.data;
+          this.total = resp.data.length;
+        } else {
           this.$message({
             type: "warning",
             message: "数据获取失败"
           });
         }
-      })
+      });
     },
     // 当前页
     handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
-        this.currentPage = val;
-        this.fetchData()
-      }
+      console.log(`当前页: ${val}`);
+      this.currentPage = val;
+      this.fetchData();
+    }
   }
 };
 </script>

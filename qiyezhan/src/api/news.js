@@ -13,5 +13,12 @@ export default {
             method: 'get',
             url: `/news/${page}/${size}`
         })
+    },
+    // 根据id查询
+    getById(id){
+        return request({
+            method:'get',
+            url:`/newsitem/${id}`
+        })
     }
 }

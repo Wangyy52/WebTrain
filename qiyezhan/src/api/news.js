@@ -4,21 +4,21 @@ export default {
     getNews() {
         return request({
             method: 'get',
-            url: '/news'
+            url: '/news.json'
         })
     },
     // 分页查询
     search(page, size) {
         return request({
             method: 'get',
-            url: `/news/${page}/${size}`
+            url: `/news/${page}/${size}.json`
         })
     },
     // 根据id查询
     getById(id){
         return request({
             method:'get',
-            url:`/newsitem/${id}`
+            url:`/newsitem/${id}.json`
         })
     }
 }

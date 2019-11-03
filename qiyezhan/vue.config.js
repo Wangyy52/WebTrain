@@ -1,5 +1,6 @@
 module.exports = {
     devServer: {
+        
         port: 8888,//端口号，如果端口号被占用，会自动提升1
         host: "localhost",//主机名，
         https: false,//协议
@@ -18,6 +19,7 @@ module.exports = {
             }
         }
     },
+    publicPath:'./',
     lintOnSave: false,//关闭格式检查
     productionSourceMap: false,//打包时不会生成.map文件，加快打包速度
 }

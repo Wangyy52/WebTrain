@@ -4,7 +4,7 @@ export default {
     getSwiper(){
         return request({
             method:'get',
-            url:'/swiper'
+            url:'/swiper.json'
         })
     }
 }

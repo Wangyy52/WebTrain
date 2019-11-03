@@ -1,0 +1,19 @@
+{
+	"code": 2000,
+	"flag": true,
+	"message": "获取成功",
+	"data": [{
+			"id": 1,
+			"imgUrl": "http://p6.qhimg.com/bdr/__85/t01f73cd05f03447543.jpg"
+		},
+		{
+			"id": 2,
+			"imgUrl": "http://p1.qhimg.com/bdr/__85/t0124fe3eebb423762c.jpg"
+		},
+		{
+			"id": 3,
+			"imgUrl": "http://p6.qhimg.com/bdr/__85/t0124f00e0f24ab1fe3.jpg"
+		}
+
+	]
+}
